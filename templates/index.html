@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список предметів</title>
+</head>
+<body>
+    <h1>Список предметів</h1>
+
+    <ul>
+        {% for item in items %}
+            <il><strong>{{ item.name }}
+            </strong>: {{ item.description }}</il>
+            {% endfor %}
+    </ul>
+
+    <h2>Додати новий предмет</h2>
+    <form method="post" action="/add">
+        <label for="name">Назва:</label>
+        <input type="text" id="name"
+               name="name" required><br><br>
+        <label for="description">Опис:</label>
+        <input type="text" id="description"
+               name="description"  required><br><br>
+        <button type="submit">Додати</button>
+    </form>
+
+</body>
+</html>
